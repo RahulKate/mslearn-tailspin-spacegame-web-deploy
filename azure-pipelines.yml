@@ -1,13 +1,13 @@
 trigger:
   - '*'
-  
+
   variables:
     buildConfiguration: 'Release'
   
   stages:
   - stage: 'Build'
     displayName: 'Build the web application'
-    jobs: 
+    jobs:
     - job: 'Build'
       displayName: 'Build job'
       pool:
@@ -59,8 +59,7 @@ trigger:
           command: 'publish'
           projects: '**/*.csproj'
           publishWebProjects: false
-          arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
-          zipAfterPublish: true
+          arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)' zipAfterPublish: true
   
       - publish: '$(Build.ArtifactStagingDirectory)'
         artifact: drop
