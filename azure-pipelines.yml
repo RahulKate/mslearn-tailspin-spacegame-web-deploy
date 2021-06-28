@@ -1,8 +1,5 @@
 trigger:
-  - release-pipeline
-  
-  variables:
-    buildConfiguration: 'Release'
+  - '*'
   
   stages:
   - stage: 'Build'
