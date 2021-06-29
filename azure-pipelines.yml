@@ -14,6 +14,7 @@
       variables:
         wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
         dotnetSdkVersion: '5.0.203'
+        buildConfiguration: 'Release'
   
       steps:
       - task: UseDotNet@2
@@ -70,6 +71,7 @@
         vmImage: 'ubuntu-20.04'
       environment: dev
       variables:
+        buildConfiguration: 'Release'
       - group: Release
       strategy:
         runOnce:
