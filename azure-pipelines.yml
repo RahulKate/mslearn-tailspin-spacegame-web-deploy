@@ -71,7 +71,6 @@
         vmImage: 'ubuntu-20.04'
       environment: dev
       variables:
-        buildConfiguration: 'Release'
       - group: Release
       strategy:
         runOnce:
@@ -84,4 +83,4 @@
               inputs:
                 azureSubscription: 'Resource Manager - Tailspin - Space Game'
                 appName: '$(WebAppName)'
-                package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
+                package: '$(Pipeline.Workspace)/drop/Release/*.zip'
